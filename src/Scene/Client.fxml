@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller.ClientController"
+            prefHeight="400.0" prefWidth="600.0">
+    <BorderPane.margin>
+        <Insets bottom="10.0" top="10.0" left="10.0" right="10.0"/>
+    </BorderPane.margin>
+    <top>
+        <GridPane hgap="10" vgap="10" prefHeight="30" alignment="CENTER">
+            <GridPane.margin>
+                <Insets bottom="10.0" top="10.0" left="10.0" right="10.0"/>
+            </GridPane.margin>
+            <Text text="Delete with reg number:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="regNr" maxWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#deleteMeterWithReg"/>
+            <Button text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#deleteMeterWithReg"/>
+        </GridPane>
+    </top>
+    <center>
+        <GridPane hgap="10" vgap="10" alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </BorderPane.margin>
+            <ListView fx:id="listView"
+                      prefHeight="350"
+                      prefWidth="300"
+                      GridPane.columnIndex="0"
+                      GridPane.rowIndex="0" GridPane.rowSpan="20"/>
+            <Button fx:id="addMeter" onAction="#addMeter" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Button fx:id="editMeter" onAction="#editMeter" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Button fx:id="deleteMeter" onAction="#deleteMeter" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Text fx:id="selectedMeter" GridPane.columnIndex="1" GridPane.rowIndex="3" wrappingWidth="300"/>
+
+            <Button text="Show all meters" onAction="#printList" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+        </GridPane>
+    </center>
+</BorderPane>

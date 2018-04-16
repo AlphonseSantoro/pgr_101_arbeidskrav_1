@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Controller.EditController"
+          prefHeight="400.0" prefWidth="600.0"
+          alignment="CENTER"
+          vgap="10"
+          hgap="10" stylesheets="@style.css">
+    <Text text="Current Meter information:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Text fx:id="meterText" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Text fx:id="minVal" text="Min" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField fx:id="fieldMinVal" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Text fx:id="maxVal" text="Max" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField fx:id="fieldMaxVal" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2" spacing="10">
+        <HBox>
+            <Text text="ShelfCode:"/>
+            <Text text="Room:"/>
+            <ComboBox fx:id="roomBox" prefHeight="20"/>
+            <Text text="Shelf:"/>
+            <ComboBox fx:id="shelfBox" prefHeight="20"/>
+            <Text text="Place:"/>
+            <ComboBox fx:id="placeBox" prefHeight="20"/>
+        </HBox>
+        <Text fx:id="shelfCodeMessage" text="Location is in use, choose a different location."/>
+    </VBox>
+    <Text text="Is working:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <CheckBox fx:id="checkBox" selected="true" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <Button text="Save" GridPane.columnIndex="0" GridPane.rowIndex="8" onAction="#saveMeter" />
+    <Button text="Go back" GridPane.columnIndex="1" GridPane.rowIndex="8" onAction="#setSceneToClient"/>
+</GridPane>
